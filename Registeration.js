@@ -51,6 +51,7 @@ function validation(){
   else{
     document.getElementById("testotp").innerHTML="Validation Successful!";
     window.location.href = "http://pixel6.co/";
+    document.getElementById("otp").value="";
   }
 }
 //Replace function for formatting phone number
