@@ -5,23 +5,28 @@
 	<title>Pixel 6 Registeration Form</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" type="text/css" href="display.css">  
 </head>
 
 <body>
-	<form id="initform">
-		<label for="fname">Full Name: </label>
+	<div id="g1"><h1>Pixel6 Registeration Form</h1></div>
+	<div id="initform">
+	<form>
+		<h3>Register here...</h3>
+		<label for="fname">Full Name: </label><br>
 		<input type="text" name="fname" class="formelement" id="fname" placeholder="Full Name"
 			pattern="[a-zA-Z]+[ ][a-zA-Z]+" required>
 		<div id="fnamemsg"></div><br>
-		<label for="email">Email: </label>
+		<label for="email">Email: </label><br>
 		<input type="email" name="email" class="formelement" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-			placeholder="E-Mail" required><br>
-		<label for="pno">Phone Number: </label>
+			placeholder="E-Mail" required><div id="enamemsg"></div><br>
+		<label for="pno">Phone Number: </label><br>
 		<input type="text" name="pno" class="phoneNumber" id="pno" placeholder="(123)-456-7890" pattern="[0-9]{10}" required>
+		<div id="pnamemsg"></div>
 		<div id="providermsg"></div>
 		<div id="statemsg"></div><br>
 		<button type="button" name="btnsubmit" class="formelement" id="btnsubmit" onclick="myTest()">Submit</button>
-	</form>
+	</div>
 	<div id="verification">
 		<div id="valmsg"></div>
 		<div id="valmsg2"></div>
@@ -29,7 +34,9 @@
 		<input type="text" name="otp" class="otp" id="otp" pattern="[0-9]{4}$" placeholder="OTP" required><br> 
 		<button type="button" name="btnvalidate" class="btnvalidate" id="btnvalidate" onclick="validation()">Validate</button>
 	</div>
+</form>
 	<script type="text/javascript" src="Registeration.js"></script>
+	<div id="g2"></div>
 </body>
 
 </html>
