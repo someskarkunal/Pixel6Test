@@ -5,18 +5,31 @@ document.getElementById("verification").style.display = "none";
 //Button Submit
 function myTest() {
   var fname = document.getElementById('fname').value;
+  var email = document.getElementById("email").value;
+  var pno = document.getElementById("pno").value;
   var len = fname.split(" ");
   if (len[0].length < 4 || len[1].length < 4) {
     document.getElementById("fnamemsg").innerHTML = "Invalid input, please input 'FirstName(4chars>)(space)LastName(4chars>)'.";
   }
+  else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)==false)
+  {
+    document.getElementById("enamemsg").innerHTML = "Enter valid Email Id."
+  }
+  else if(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(pno)==false)
+  {
+    document.getElementById("pnamemsg").innerHTML = "Enter valid Phone Number."
+  }
   else {
-    var pno = document.getElementById("pno").value;
+    pno = document.getElementById("pno").value;
     document.getElementById("valmsg").innerHTML = "Dear "+ len[0] +",Thank you for your enquiry. A 4 digit verification number has been sent to your phone number: " + pno + ", please enter in the following box and submit for confirmation:";
     document.getElementById("valmsg2").innerHTML = "Kindly refer to the console to get the OTP.";
     document.getElementById("initform").style.display = "none";
     document.getElementById("verification").style.display = "block";
     val = Math.floor(1000 + Math.random() * 9000);
     console.log(val);
+    document.getElementById('fname').value="";
+    document.getElementById("email").value="";
+    document.getElementById("pno").value="";
   }
 }
 //Button Validate
@@ -26,6 +39,7 @@ function validation(){
   if(val!=+inp)
   {
     document.getElementById("testotp").innerHTML="Incorrect OTP, Kindly re-enter.";
+    document.getElementById("otp").value="";
     val = Math.floor(1000 + Math.random() * 9000);
     console.log(val);
     count++;
