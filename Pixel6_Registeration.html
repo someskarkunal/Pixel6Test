@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Pixel 6 Registeration Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+	<form id="initform">
+		<label for="fname">Full Name: </label>
+		<input type="text" name="fname" class="formelement" id="fname" placeholder="Full Name"
+			pattern="[a-zA-Z]+[ ][a-zA-Z]+" required>
+		<div id="fnamemsg"></div><br>
+		<label for="email">Email: </label>
+		<input type="email" name="email" class="formelement" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+			placeholder="E-Mail" required><br>
+		<label for="pno">Phone Number: </label>
+		<input type="text" name="pno" class="phoneNumber" id="pno" placeholder="(123)-456-7890" pattern="[0-9]{10}" required>
+		<div id="providermsg"></div>
+		<div id="statemsg"></div><br>
+		<button type="button" name="btnsubmit" class="formelement" id="btnsubmit" onclick="myTest()">Submit</button>
+	</form>
+	<div id="verification">
+		<div id="valmsg"></div>
+		<div id="valmsg2"></div>
+		<div id="testotp"></div>
+		<input type="text" name="otp" class="otp" id="otp" pattern="[0-9]{4}$" placeholder="OTP" required><br> 
+		<button type="button" name="btnvalidate" class="btnvalidate" id="btnvalidate" onclick="validation()">Validate</button>
+	</div>
+	<script type="text/javascript" src="Registeration.js"></script>
+</body>
+
+</html>
