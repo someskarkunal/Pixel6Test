@@ -17,6 +17,6 @@ Step 8 : Enter that OTP in the textbox provided and click on the Validate Button
 Step 9 : If you input the correct OTP you will be redirected to the "Pixel6 Homeopage".
 Step 10 : If you input the OTP wrong, then a new OTP will be generated and you will be asked to re-enter the OTP.
           If the OTP is entered wrong 3 times in a row, then you will be redirected to the "Pixel6 404 Page Not Found" Page.
-
+(Note: The State Codes are between 101-136, eg. (921)-101-1111 is from Andhra Pradesh)
 Developed on : Visual Studio Code
 Tested and Debugged on : Google Chrome
