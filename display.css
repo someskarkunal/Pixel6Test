@@ -1,0 +1,142 @@
+html{
+    background: linear-gradient(132deg, rgba(250,148,5,1) 0%, rgba(255,255,255,1) 50%, rgba(14,163,3,1) 100%);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    display: grid;
+    grid-template-areas: "g1 g1 g1"
+    "initform initform initform"
+    "g2 g2 g2";
+    grid-template-rows: 200px 300px 180px;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 5px;
+    text-align: center;
+}
+h1{
+    font-size: 60px;
+    font-weight: 100;
+}
+h3{
+    margin-top: 0px;
+}
+form{
+    display: inline-block;
+    border: 1px black solid;
+    padding: 20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    background: white;
+    border-radius: 5px;
+}
+#g1{
+    grid-area: g1;
+}
+#initform{
+    grid-area: initform;
+}
+#verification{
+    grid-area: initform;
+}
+#g2{
+    grid-area: g2;
+}
+#btnsubmit,#btnvalidate{
+    width: 400px;
+    height: 50px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+#btnvalidate{
+    margin: 5px;
+}
+label{
+    text-align: center;
+}
+input[type=text],input[type=email]{
+    margin-top: 5px;
+    border: 1px #ccccb3 solid;
+    border-radius: 5px;
+    width: 400px;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+#valmsg{
+    margin: 50px 0px;
+}
+@media only screen and (max-width:500px){
+    html{
+        background: linear-gradient(132deg, rgba(250,148,5,1) 0%, rgba(255,255,255,1) 50%, rgba(14,163,3,1) 100%);
+        background-repeat: no-repeat;
+        height: 175%;
+        width: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        display: grid;
+        grid-template-areas: "g1"
+        "initform"
+        "g2";
+        grid-template-rows: 150px 150px 180px;
+        grid-template-columns: 98%;
+        grid-gap: 5px;
+        text-align: center;
+    }
+    h1{
+        font-size: 3em;
+        font-weight: 100;
+    }
+    h3{
+        margin-top: 0px;
+    }
+    form{
+        display: inline-block;
+        border: 1px black solid;
+        padding: 20px;
+        box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        background: white;
+        border-radius: 5px;
+    }
+    #g1{
+        grid-area: g1;
+    }
+    #initform{
+        grid-area: initform;
+    }
+    #verification{
+        grid-area: initform;
+    }
+    #g2{
+        grid-area: g2;
+    }
+    #btnsubmit,#btnvalidate{
+        width: 400px;
+        height: 50px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+    #btnvalidate{
+        margin: 5px;
+    }
+    label{
+        text-align: center;
+    }
+    input[type=text],input[type=email]{
+        margin-top: 5px;
+        border: 1px #ccccb3 solid;
+        border-radius: 5px;
+        width: 400px;
+        height: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 17px;
+    }
+    #valmsg{
+        margin: 50px 0px;
+    }
+}
