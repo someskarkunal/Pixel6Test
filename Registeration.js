@@ -10,14 +10,20 @@ function myTest() {
   var len = fname.split(" ");
   if (len[0].length < 4 || len[1].length < 4) {
     document.getElementById("fnamemsg").innerHTML = "Invalid input, please input 'FirstName(4chars>)(space)LastName(4chars>)'.";
+    document.getElementById("enamemsg").innerHTML = "";
+    document.getElementById("pnamemsg").innerHTML = "";
   }
   else if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)==false)
   {
-    document.getElementById("enamemsg").innerHTML = "Enter valid Email Id."
+    document.getElementById("fnamemsg").innerHTML = "";
+    document.getElementById("enamemsg").innerHTML = "Enter valid Email Id.";
+    document.getElementById("pnamemsg").innerHTML = "";
   }
   else if(/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(pno)==false)
   {
-    document.getElementById("pnamemsg").innerHTML = "Enter valid Phone Number."
+    document.getElementById("fnamemsg").innerHTML = "";
+    document.getElementById("enamemsg").innerHTML = "";
+    document.getElementById("pnamemsg").innerHTML = "Enter valid Phone Number.";
   }
   else {
     pno = document.getElementById("pno").value;
