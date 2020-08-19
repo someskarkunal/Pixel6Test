@@ -33,6 +33,7 @@ function myTest() {
     document.getElementById("verification").style.display = "block";
     val = Math.floor(1000 + Math.random() * 9000);
     console.log(val);
+    document.getElementById("otpmsg").innerHTML=val;
     document.getElementById('fname').value="";
     document.getElementById("email").value="";
     document.getElementById("pno").value="";
@@ -48,9 +49,11 @@ function validation(){
     document.getElementById("otp").value="";
     val = Math.floor(1000 + Math.random() * 9000);
     console.log(val);
+    document.getElementById("otpmsg").innerHTML=val;
     count++;
     if(count==3)
     {
+      document.getElementById("otpmsg").innerHTML="";
       window.location.href = "http://pixel6.co/test";
     }
   }
