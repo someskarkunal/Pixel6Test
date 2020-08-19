@@ -8,6 +8,8 @@ function myTest() {
   var email = document.getElementById("email").value;
   var pno = document.getElementById("pno").value;
   var len = fname.split(" ");
+  var slice1 = pno.slice(1, 4);
+  var slice2 = pno.slice(6, 9);
   if (len[0].length < 4 || len[1].length < 4) {
     document.getElementById("fnamemsg").innerHTML = "Invalid input, please input 'FirstName(4chars>)(space)LastName(4chars>)'.";
     document.getElementById("enamemsg").innerHTML = "";
@@ -24,6 +26,16 @@ function myTest() {
     document.getElementById("fnamemsg").innerHTML = "";
     document.getElementById("enamemsg").innerHTML = "";
     document.getElementById("pnamemsg").innerHTML = "Enter valid Phone Number.";
+  }
+  else if (slice2 < 101 || slice2 > 136){
+    document.getElementById("statemsg").innerHTML = "Invalid Number";
+    document.getElementById("btnsubmit").disable = true;
+    return false;
+  }
+  else if(slice1 < 621 || slice1 > 999){
+    document.getElementById("providermsg").innerHTML = "Invalid Number";
+    document.getElementById("btnsubmit").disable = true;
+    return false;
   }
   else {
     pno = document.getElementById("pno").value;
@@ -78,90 +90,89 @@ function formatPhoneText(value) {
   else if (value.length > 6)
     value = initvalue + "-" + value.slice(3, 6) + "-" + value.slice(6);
   var res = "(" + value.slice(0, 3) + ")" + "-" + value.slice(4, 12);
-
   if (value.slice(0, 3) == '')
     return '';
   else
     if (value.slice(0, 3) >= 621 && value.slice(0, 3) <= 799)
       document.getElementById("providermsg").innerHTML = "Reliance Jio";
       //State codes given from 101-136
-  if (value.slice(4, 7) == 101)
-    document.getElementById("statemsg").innerHTML = ", Andhra Pradesh";
-  else if (value.slice(4, 7) == 102)
-    document.getElementById("statemsg").innerHTML = ", Arunachal Pradesh";
-  else if (value.slice(4, 7) == 103)
-    document.getElementById("statemsg").innerHTML = ", Assam";
-  else if (value.slice(4, 7) == 104)
-    document.getElementById("statemsg").innerHTML = ", Bihar";
-  else if (value.slice(4, 7) == 105)
-    document.getElementById("statemsg").innerHTML = ", Chhattisgarh";
-  else if (value.slice(4, 7) == 106)
-    document.getElementById("statemsg").innerHTML = ", Goa";
-  else if (value.slice(4, 7) == 107)
-    document.getElementById("statemsg").innerHTML = ", Gujarat";
-  else if (value.slice(4, 7) == 108)
-    document.getElementById("statemsg").innerHTML = ", Haryana";
-  else if (value.slice(4, 7) == 109)
-    document.getElementById("statemsg").innerHTML = ", Himachal Pradesh";
-  else if (value.slice(4, 7) == 110)
-    document.getElementById("statemsg").innerHTML = ", Jharkhand";
-  else if (value.slice(4, 7) == 111)
-    document.getElementById("statemsg").innerHTML = ", Karnataka";
-  else if (value.slice(4, 7) == 112)
-    document.getElementById("statemsg").innerHTML = ", Kerala";
-  else if (value.slice(4, 7) == 113)
-    document.getElementById("statemsg").innerHTML = ", Madhya Pradesh";
-  else if (value.slice(4, 7) == 114)
-    document.getElementById("statemsg").innerHTML = ", Maharashtra";
-  else if (value.slice(4, 7) == 115)
-    document.getElementById("statemsg").innerHTML = ", Manipur";
-  else if (value.slice(4, 7) == 116)
-    document.getElementById("statemsg").innerHTML = ", Meghalaya";
-  else if (value.slice(4, 7) == 117)
-    document.getElementById("statemsg").innerHTML = ", Mizoram";
-  else if (value.slice(4, 7) == 118)
-    document.getElementById("statemsg").innerHTML = ", Nagaland";
-  else if (value.slice(4, 7) == 119)
-    document.getElementById("statemsg").innerHTML = ", Odisha";
-  else if (value.slice(4, 7) == 120)
-    document.getElementById("statemsg").innerHTML = ", Punjab";
-  else if (value.slice(4, 7) == 121)
-    document.getElementById("statemsg").innerHTML = ", Rajasthan";
-  else if (value.slice(4, 7) == 122)
-    document.getElementById("statemsg").innerHTML = ", Sikkim";
-  else if (value.slice(4, 7) == 123)
-    document.getElementById("statemsg").innerHTML = ", Tamil Nadu";
-  else if (value.slice(4, 7) == 124)
-    document.getElementById("statemsg").innerHTML = ", Telangana";
-  else if (value.slice(4, 7) == 125)
-    document.getElementById("statemsg").innerHTML = ", Tripura";
-  else if (value.slice(4, 7) == 126)
-    document.getElementById("statemsg").innerHTML = ", Uttar Pradesh";
-  else if (value.slice(4, 7) == 127)
-    document.getElementById("statemsg").innerHTML = ", Uttarakhand";
-  else if (value.slice(4, 7) == 128)
-    document.getElementById("statemsg").innerHTML = ", West Bengal";
-  else if (value.slice(4, 7) == 129)
-    document.getElementById("statemsg").innerHTML = ", Andaman and Nicobar";
-  else if (value.slice(4, 7) == 130)
-    document.getElementById("statemsg").innerHTML = ", Chandigarh";
-  else if (value.slice(4, 7) == 131)
-    document.getElementById("statemsg").innerHTML = ", Dadra Nagar Haveli";
-  else if (value.slice(4, 7) == 132)
-    document.getElementById("statemsg").innerHTML = ", Daman and Diu";
-  else if (value.slice(4, 7) == 133)
-    document.getElementById("statemsg").innerHTML = ", Delhi";
-  else if (value.slice(4, 7) == 134)
-    document.getElementById("statemsg").innerHTML = ", Jammu and Kashmir";
-  else if (value.slice(4, 7) == 135)
-    document.getElementById("statemsg").innerHTML = ", Lakshadweep";
-  else if (value.slice(4, 7) == 136)
-    document.getElementById("statemsg").innerHTML = ", Ladakh";
+      if (value.slice(4, 7) == 101)
+        document.getElementById("statemsg").innerHTML = ", Andhra Pradesh";
+      else if (value.slice(4, 7) == 102)
+        document.getElementById("statemsg").innerHTML = ", Arunachal Pradesh";
+      else if (value.slice(4, 7) == 103)
+        document.getElementById("statemsg").innerHTML = ", Assam";
+      else if (value.slice(4, 7) == 104)
+        document.getElementById("statemsg").innerHTML = ", Bihar";
+      else if (value.slice(4, 7) == 105)
+        document.getElementById("statemsg").innerHTML = ", Chhattisgarh";
+      else if (value.slice(4, 7) == 106)
+        document.getElementById("statemsg").innerHTML = ", Goa";
+      else if (value.slice(4, 7) == 107)
+        document.getElementById("statemsg").innerHTML = ", Gujarat";
+      else if (value.slice(4, 7) == 108)
+        document.getElementById("statemsg").innerHTML = ", Haryana";
+      else if (value.slice(4, 7) == 109)
+        document.getElementById("statemsg").innerHTML = ", Himachal Pradesh";
+      else if (value.slice(4, 7) == 110)
+        document.getElementById("statemsg").innerHTML = ", Jharkhand";
+      else if (value.slice(4, 7) == 111)
+        document.getElementById("statemsg").innerHTML = ", Karnataka";
+      else if (value.slice(4, 7) == 112)
+        document.getElementById("statemsg").innerHTML = ", Kerala";
+      else if (value.slice(4, 7) == 113)
+        document.getElementById("statemsg").innerHTML = ", Madhya Pradesh";
+      else if (value.slice(4, 7) == 114)
+        document.getElementById("statemsg").innerHTML = ", Maharashtra";
+      else if (value.slice(4, 7) == 115)
+        document.getElementById("statemsg").innerHTML = ", Manipur";
+      else if (value.slice(4, 7) == 116)
+        document.getElementById("statemsg").innerHTML = ", Meghalaya";
+      else if (value.slice(4, 7) == 117)
+        document.getElementById("statemsg").innerHTML = ", Mizoram";
+      else if (value.slice(4, 7) == 118)
+        document.getElementById("statemsg").innerHTML = ", Nagaland";
+      else if (value.slice(4, 7) == 119)
+        document.getElementById("statemsg").innerHTML = ", Odisha";
+      else if (value.slice(4, 7) == 120)
+        document.getElementById("statemsg").innerHTML = ", Punjab";
+      else if (value.slice(4, 7) == 121)
+        document.getElementById("statemsg").innerHTML = ", Rajasthan";
+      else if (value.slice(4, 7) == 122)
+        document.getElementById("statemsg").innerHTML = ", Sikkim";
+      else if (value.slice(4, 7) == 123)
+        document.getElementById("statemsg").innerHTML = ", Tamil Nadu";
+      else if (value.slice(4, 7) == 124)
+        document.getElementById("statemsg").innerHTML = ", Telangana";
+      else if (value.slice(4, 7) == 125)
+        document.getElementById("statemsg").innerHTML = ", Tripura";
+      else if (value.slice(4, 7) == 126)
+        document.getElementById("statemsg").innerHTML = ", Uttar Pradesh";
+      else if (value.slice(4, 7) == 127)
+        document.getElementById("statemsg").innerHTML = ", Uttarakhand";
+      else if (value.slice(4, 7) == 128)
+        document.getElementById("statemsg").innerHTML = ", West Bengal";
+      else if (value.slice(4, 7) == 129)
+        document.getElementById("statemsg").innerHTML = ", Andaman and Nicobar";
+      else if (value.slice(4, 7) == 130)
+        document.getElementById("statemsg").innerHTML = ", Chandigarh";
+      else if (value.slice(4, 7) == 131)
+        document.getElementById("statemsg").innerHTML = ", Dadra Nagar Haveli";
+      else if (value.slice(4, 7) == 132)
+        document.getElementById("statemsg").innerHTML = ", Daman and Diu";
+      else if (value.slice(4, 7) == 133)
+        document.getElementById("statemsg").innerHTML = ", Delhi";
+      else if (value.slice(4, 7) == 134)
+        document.getElementById("statemsg").innerHTML = ", Jammu and Kashmir";
+      else if (value.slice(4, 7) == 135)
+        document.getElementById("statemsg").innerHTML = ", Lakshadweep";
+      else if (value.slice(4, 7) == 136)
+        document.getElementById("statemsg").innerHTML = ", Ladakh";
   else if (value.slice(0, 3) >= 801 && value.slice(0, 3) <= 920)
     document.getElementById("providermsg").innerHTML = "Idea";
   else if (value.slice(0, 3) >= 921 && value.slice(0, 3) <= 999)
     document.getElementById("providermsg").innerHTML = "Vodafone";
-  else
+  else 
     document.getElementById("providermsg").innerHTML = "";
   return res;
 }
