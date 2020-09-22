@@ -1,5 +1,5 @@
 # Pixel6Test
-Pixel6Test
+Simple Javascript Registeration Form
 Welcome to my repository. 
 This is a simple Javascript Form Registeration Web Application. 
 Application walkthrough: 
